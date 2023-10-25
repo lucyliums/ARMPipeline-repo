@@ -1,0 +1,25 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: AzureResourceManagerTemplateDeployment@3
+  inputs:
+    deploymentScope: 'Resource Group'
+    azureResourceManagerConnection: 'ARMPipeline-conn'
+    subscriptionId: 'c99e2bf3-1777-412b-baba-d823676589c2'
+    action: 'Create Or Update Resource Group'
+    resourceGroupName: 'liulucARMPipeline-rg'
+    location: 'Central US'
+    templateLocation: 'URL of the file'
+    csmFileLink: 'https://raw.githubusercontent.com/lucyliums/ARMPipeline-repo/main/create_web_app/azuredeploy.json?token=GHSAT0AAAAAACI3QINXOXB3L6FEFXI4IPBAZJYVIYA'
+    overrideParameters: '-projectName llarmpipeline'
+    deploymentMode: 'Incremental'
+    deploymentName: 'DeployPipelineTemplate'
