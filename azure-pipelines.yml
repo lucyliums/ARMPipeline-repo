@@ -19,7 +19,7 @@ steps:
     resourceGroupName: 'liulucARMPipeline-rg'
     location: 'Central US'
     templateLocation: 'URL of the file'
-    csmFileLink: 'https://raw.githubusercontent.com/lucyliums/ARMPipeline-repo/main/create_web_app/azuredeploy.json?token=GHSAT0AAAAAACI3QINXOXB3L6FEFXI4IPBAZJYVIYA'
+    csmFileLink: 'https://raw.githubusercontent.com/lucyliums/ARMPipeline-repo/main/create_web_app/azuredeploy.json?token=GHSAT0AAAAAACI3QINXMF4PUORTPYQ4WZW2ZJYVXFA'
     overrideParameters: '-projectName llarmpipeline'
     deploymentMode: 'Incremental'
     deploymentName: 'DeployPipelineTemplate'
